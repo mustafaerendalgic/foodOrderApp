@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gri">#282828</color>
+    <color name="tema">#7d9dff</color>
+    <color name="tema2">#7d9dff</color>
+    <color name="fiyatText">#8cc4dd</color>
+    <color name="icecek">#de6b54</color>
+    <color name="tatli">#b6844c</color>
+    <color name="anaYemek">#d95757</color>
+
+</resources>

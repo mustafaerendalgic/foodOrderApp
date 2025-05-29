@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.bitirmeprojesi.ui.fragment.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/anaToDetay"
+            app:destination="@id/detayFragment">
+        </action>
+        <action
+            android:id="@+id/anaToSepet"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.example.bitirmeprojesi.ui.fragment.DetayFragment"
+        android:label="fragment_detay"
+        tools:layout="@layout/fragment_detay" >
+
+        <argument
+            android:name="yemek"
+            app:argType="com.example.bitirmeprojesi.data.entity.Yemekler" />
+        <action
+            android:id="@+id/detayToAna"
+            app:destination="@id/anaSayfaFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.example.bitirmeprojesi.ui.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <action
+            android:id="@+id/sepetToAna"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">bitirmeProjesi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arama_cubugu">Anahtar kelime girin...</string>
+    <string name="tumu">Tümü</string>
+    <string name="anaYemek">Yemek</string>
+    <string name="tatli">Tatlı</string>
+    <string name="icecek">İçecek</string>
+    <string name="adres">Adresim</string>
+    <string name="sepeteEkle">SEPETE EKLE</string>
+    <string name="siparisVerin">Sipariş Verin</string>
+    <string name="bizeUlasin">Bize Ulaşın</string>
+    <string name="yanindaIyiGider">Yanında İyi Gider</string>
+    <string name="sepet">Sepetiniz</string>
+    <string name="sil">Hepsini Sil</string>
+    <string name="siparisVer">Sipariş Ver</string>
+    <string name="sepetBos">Sepetiniz Boş Görünüyor...</string>
+</resources>

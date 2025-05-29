@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.AnaSayfaFragment"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/barRenk"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            app:cardBackgroundColor="@color/tema"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/ikonlar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/kart_tasarim2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/bizeUlasin"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/imageView7"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/headphones"
+            app:layout_constraintBottom_toBottomOf="@+id/adresIkon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adresIkon"
+            app:layout_constraintTop_toTopOf="@+id/adresIkon" />
+
+        <TextView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@color/tema"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ikonlar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barRenk">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tumuKart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="7dp"
+                app:layout_constraintEnd_toStartOf="@+id/anaYemekKart"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/tumu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/tumuyenisvg" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tumuText"
+                style="@style/kart_tasarim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="Tümü"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tumuKart"
+                app:layout_constraintStart_toStartOf="@id/tumuKart"
+                app:layout_constraintTop_toBottomOf="@id/tumuKart" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/anaYemekKart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="7dp"
+                app:layout_constraintEnd_toStartOf="@+id/tatliKart"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tumuKart"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/anaYemek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    tools:src="@drawable/anayemekyeni" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/kart_tasarim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/anaYemek"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/anaYemekKart"
+                app:layout_constraintStart_toStartOf="@+id/anaYemekKart"
+                app:layout_constraintTop_toBottomOf="@+id/anaYemekKart" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tatliKart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="7dp"
+                app:layout_constraintEnd_toStartOf="@+id/icecekKart"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/anaYemekKart"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/tatli"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleY="0.9"
+                    tools:src="@drawable/tatliyenisvg" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/kart_tasarim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/tatli"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tatliKart"
+                app:layout_constraintStart_toStartOf="@+id/tatliKart"
+                app:layout_constraintTop_toBottomOf="@+id/tatliKart" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/icecekKart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tatliKart"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/icecek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    tools:src="@drawable/icecekyenisvg" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/kart_tasarim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/icecek"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/icecekKart"
+                app:layout_constraintStart_toStartOf="@+id/icecekKart"
+                app:layout_constraintTop_toBottomOf="@+id/icecekKart" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/aramaCubugu"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/baseline_search_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/aramaCubuguYazi"
+                    style="@style/kart_tasarim2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:hint="@string/arama_cubugu"
+                    android:textSize="16dp"
+                    android:textColorHint="#aa333333"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/qr"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/microphone2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/anaRecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:nestedScrollingEnabled="false"
+            android:paddingBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ikonlar"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/adresIkon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/house"
+            app:layout_constraintEnd_toStartOf="@id/imageView7"
+            app:layout_constraintStart_toStartOf="@+id/barRenk"
+            app:layout_constraintTop_toBottomOf="@+id/aramaCubugu" />
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/kart_tasarim2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/adres"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/adresIkon"
+            app:layout_constraintStart_toStartOf="@id/adresIkon"
+            app:layout_constraintTop_toBottomOf="@+id/adresIkon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
