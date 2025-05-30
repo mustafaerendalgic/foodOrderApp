@@ -14,14 +14,17 @@ class FavoriViewModel @Inject constructor(val repo: YemeklerRepo) : ViewModel(){
 
     var favoriList = MutableLiveData<List<Yemekler>>()
     var list = mutableMapOf<String, Yemekler>()
+    var animFlag = true
 
     fun favorilereEkle(yemek: Yemekler, adi: String){
         if(list[adi] == null)
             list[adi] = yemek
+        favoriList.value = list.values.toList()
     }
 
     fun favorilerdenSil(ad: String){
         list.remove(ad)
+        favoriList.value = list.values.toList()
     }
 
 }

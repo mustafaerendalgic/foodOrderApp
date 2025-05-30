@@ -67,7 +67,7 @@ class DetayFragment : Fragment() {
         binding.verify.visibility = View.INVISIBLE
 
         val bundle : DetayFragmentArgs by navArgs()
-        val yemek = bundle.yemek
+        val yemek = bundle.item
         var miktar = 1
 
         var yemekListesi = listOf<Yemekler>()

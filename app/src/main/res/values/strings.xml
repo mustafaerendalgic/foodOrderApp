@@ -16,4 +16,6 @@
     <string name="sil">Hepsini Sil</string>
     <string name="siparisVer">Sipariş Ver</string>
     <string name="sepetBos">Sepetiniz Boş Görünüyor...</string>
+    <string name="favoriler">Favorileriniz</string>
+    <string name="favorilerinizBos">Favorileriniz Boş görünüyor...</string>
 </resources>

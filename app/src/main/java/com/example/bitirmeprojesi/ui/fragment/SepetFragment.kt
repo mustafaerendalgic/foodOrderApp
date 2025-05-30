@@ -117,8 +117,11 @@ class SepetFragment : Fragment() {
                 binding.sepetBos.animate().translationX(0f).setDuration(1000)
                     .setInterpolator(interpolator2).start()
 
-                binding.satinAl.isEnabled = true
-                binding.hepsiniSil.isEnabled = true
+                lifecycleScope.launch {
+                    delay(2000)
+                    binding.satinAl.isEnabled = true
+                    binding.hepsiniSil.isEnabled = true
+                }
             }
         }
 
@@ -159,8 +162,12 @@ class SepetFragment : Fragment() {
                     }.start()
                 }
             }
-            binding.satinAl.isEnabled = true
-            binding.hepsiniSil.isEnabled = true
+            lifecycleScope.launch {
+                delay(2000)
+                binding.satinAl.isEnabled = true
+                binding.hepsiniSil.isEnabled = true
+            }
+
         }
 
         return binding.root

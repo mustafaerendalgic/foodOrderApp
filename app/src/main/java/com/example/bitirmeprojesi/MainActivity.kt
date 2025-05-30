@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
 
         favori.setOnClickListener {
             favori.playAnimation()
-            if(navController.currentDestination?.id != R.id.sepetFragment)
-                navController.navigate(R.id.sepetFragment)
+            if(navController.currentDestination?.id != R.id.favoriFragment)
+                navController.navigate(R.id.favoriFragment)
         }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
