@@ -26,6 +26,7 @@ class SepetViewModel @Inject constructor(val repo: YemeklerRepo): ViewModel() {
         }
     }
 
+
     fun sepettenYemekSil(sepetYemekID: String, kullanici_adi: String){
         viewModelScope.launch{
             try{

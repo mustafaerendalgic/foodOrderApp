@@ -18,13 +18,14 @@
 
     <TextView
         android:id="@+id/sepetItemIsim"
-        android:layout_width="wrap_content"
+        style="@style/kart_tasarim"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="TextView"
-        style="@style/kart_tasarim"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/sepetItemFiyat"
+        app:layout_constraintEnd_toStartOf="@+id/miktarAzalt"
         app:layout_constraintStart_toEndOf="@+id/sepetItemResim"
         app:layout_constraintTop_toTopOf="@id/sepetItemResim" />
 
@@ -45,13 +46,13 @@
         style="@style/kart_tasarim"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/sepetbuton"
         android:text="+"
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sil"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -80,6 +81,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/sepetMiktar"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sil"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/trash_can_with_cover_from_side_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

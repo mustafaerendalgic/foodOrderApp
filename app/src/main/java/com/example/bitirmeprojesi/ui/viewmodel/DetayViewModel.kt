@@ -45,28 +45,23 @@ class DetayViewModel @Inject constructor(val repo: YemeklerRepo): ViewModel() {
     fun sepeteEkleSartli(yemek: Yemekler, miktar: Int) {
         viewModelScope.launch {
             try {
-                Log.d("SEPET_DEBUG", "sepeteEkleSartli called with ${yemek.yemek_adi}")
 
-                // 🔥 Fetch fresh data directly from repo
                 val sepet = repo.sepettekileriGetir("hross")
-                Log.d("SEPET_DEBUG", "Existing items: ${sepet.map { it.yemek_adi }}")
 
                 val item = sepet.find { it.yemek_adi == yemek.yemek_adi }
 
                 if (item == null) {
-                    Log.d("SEPET_DEBUG", "Item not in cart, adding new: ${yemek.yemek_adi}")
                     sepeteEkle(yemek.yemek_adi, yemek.yemek_resim_adi, yemek.yemek_fiyat.toInt(), miktar, "hross")
                 } else {
-                    Log.d("SEPET_DEBUG", "Item already in cart, updating: ${yemek.yemek_adi}")
                     sepettenYemekSil(item.sepet_yemek_id, "hross")
                     val toplamMiktar = miktar + item.yemek_siparis_adet.toInt()
                     sepeteEkle(yemek.yemek_adi, yemek.yemek_resim_adi, yemek.yemek_fiyat.toInt(), toplamMiktar, "hross")
                 }
 
-                sepettekiYemekleriGetir() // Refresh UI LiveData
+                sepettekiYemekleriGetir()
 
             } catch (e: Exception) {
-                Log.e("SEPET_DEBUG", "Exception in sepeteEkleSartli: ${e.localizedMessage}", e)
+
             }
         }
     }

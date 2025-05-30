@@ -12,6 +12,7 @@ import com.example.bitirmeprojesi.R
 import com.example.bitirmeprojesi.data.entity.SepetYemekler
 import com.example.bitirmeprojesi.data.entity.Yemekler
 import com.example.bitirmeprojesi.ui.viewmodel.FavoriViewModel
+import com.example.bitirmeprojesi.ui.viewmodel.SepetViewModel
 import org.w3c.dom.Text
 import java.time.format.TextStyle
 
@@ -20,15 +21,17 @@ class sepetVH(val item: View): RecyclerView.ViewHolder(item){
     val ad: TextView
     val fiyat: TextView
     val miktar: TextView
+    val sil: ImageView
     init{
         resim = item.findViewById<ImageView>(R.id.sepetItemResim)
         ad = item.findViewById<TextView>(R.id.sepetItemIsim)
         fiyat = item.findViewById<TextView>(R.id.sepetItemFiyat)
         miktar = item.findViewById<TextView>(R.id.sepetMiktar)
+        sil = item.findViewById<ImageView>(R.id.sil)
     }
 }
 
-class SepetAdapter(var list: List<SepetYemekler>, val ctx: Context, ) : RecyclerView.Adapter<sepetVH>(){
+class SepetAdapter(var list: List<SepetYemekler>, val ctx: Context, val viewModel: SepetViewModel) : RecyclerView.Adapter<sepetVH>(){
 
     private val baseURL = "http://kasimadalan.pe.hu/yemekler/resimler/"
 
@@ -49,6 +52,13 @@ class SepetAdapter(var list: List<SepetYemekler>, val ctx: Context, ) : Recycler
         holder.ad.text = item.yemek_adi
         holder.fiyat.text = item.yemek_fiyat.toString() + "₺"
         holder.miktar.text = item.yemek_siparis_adet
+
+        holder.sil.setOnClickListener {
+            if(viewModel.sepettekiYemekler.value.any{ it.yemek_adi == item.yemek_adi })
+                viewModel.sepettenYemekSil(item.sepet_yemek_id, "hross")
+            viewModel.sepettekileriGetir("hross")
+        }
+
         }
 
     fun listeyiGuncelle(list2: List<SepetYemekler>){

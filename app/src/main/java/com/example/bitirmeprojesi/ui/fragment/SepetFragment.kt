@@ -51,7 +51,7 @@ class SepetFragment : Fragment() {
 
         val rv = binding.sepetRV
         var sepetYemekListesi = listOf<SepetYemekler>()
-        val adapter = SepetAdapter(sepetYemekListesi, requireContext())
+        val adapter = SepetAdapter(sepetYemekListesi, requireContext(), viewModel)
         val linearLayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rv.adapter = adapter
         rv.layoutManager = linearLayoutManager
