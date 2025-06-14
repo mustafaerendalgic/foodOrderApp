@@ -68,9 +68,15 @@ class SepetFragment : Fragment() {
             sepetYemekListesi = it
             adapter.listeyiGuncelle(sepetYemekListesi)
 
+            var fiyat = 0
+            for(yemek in sepetYemekListesi){
+                fiyat += yemek.yemek_fiyat.toInt()
+            }
+            binding.fiyatToplam.text = fiyat.toString() + "₺"
+
             if(it.isNotEmpty() && !viewModel.animFlag){
                 binding.satinAl.isEnabled = false
-                binding.hepsiniSil.isEnabled = false
+
                 kedi.animate().translationX(-width.toFloat()).setDuration(duration.toLong()).setInterpolator(interpolator2).withEndAction {
                     kedi.visibility = View.GONE
                 }.start()
@@ -82,7 +88,7 @@ class SepetFragment : Fragment() {
                 rv.translationX = width.toFloat()
                 rv.animate().translationX(0f).setDuration(duration.toLong()).setInterpolator(interpolator2).withEndAction {
                     binding.satinAl.isEnabled = true
-                    binding.hepsiniSil.isEnabled = true
+
                 }.start()
                 viewModel.animFlag = true
             }
@@ -96,34 +102,7 @@ class SepetFragment : Fragment() {
             }
         }
 
-        binding.hepsiniSil.setOnClickListener {
-            binding.satinAl.isEnabled = false
-            binding.hepsiniSil.isEnabled = false
-            if(sepetYemekListesi.isNotEmpty()) {
-                binding.sepetRV.animate().translationX(-width.toFloat()).setInterpolator(interpolator2)
-                    .setDuration(duration.toLong()).withEndAction {
-                    sepetYemekListesi.forEach {
-                        viewModel.sepettenYemekSil(it.sepet_yemek_id, "hross")
-                    }
-                }.start()
-                binding.kedi.setAnimation("catSleeping.json")
-                binding.sepetBos.visibility = View.VISIBLE
-                binding.kedi.visibility = View.VISIBLE
-                binding.sepetBos.translationX = width.toFloat()
-                binding.kedi.translationX = width.toFloat()
-                binding.kedi.playAnimation()
-                binding.kedi.animate().translationX(0f).setDuration(1000)
-                    .setInterpolator(interpolator2).start()
-                binding.sepetBos.animate().translationX(0f).setDuration(1000)
-                    .setInterpolator(interpolator2).start()
 
-                lifecycleScope.launch {
-                    delay(2000)
-                    binding.satinAl.isEnabled = true
-                    binding.hepsiniSil.isEnabled = true
-                }
-            }
-        }
 
         binding.sepetGeri.setOnClickListener {
             val gecis = SepetFragmentDirections.sepetToAna()
@@ -132,7 +111,7 @@ class SepetFragment : Fragment() {
 
         binding.satinAl.setOnClickListener {
             binding.satinAl.isEnabled = false
-            binding.hepsiniSil.isEnabled = false
+
             if(sepetYemekListesi.isNotEmpty()) {
                 sepetYemekListesi.forEach {
                     viewModel.sepettenYemekSil(it.sepet_yemek_id, "hross")
@@ -165,7 +144,7 @@ class SepetFragment : Fragment() {
             lifecycleScope.launch {
                 delay(2000)
                 binding.satinAl.isEnabled = true
-                binding.hepsiniSil.isEnabled = true
+
             }
 
         }
