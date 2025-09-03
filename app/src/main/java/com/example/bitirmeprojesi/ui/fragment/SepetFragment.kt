@@ -70,7 +70,7 @@ class SepetFragment : Fragment() {
 
             var fiyat = 0
             for(yemek in sepetYemekListesi){
-                fiyat += yemek.yemek_fiyat.toInt()
+                fiyat += yemek.yemek_fiyat.toInt() * yemek.yemek_siparis_adet.toInt()
             }
             binding.fiyatToplam.text = fiyat.toString() + "₺"
 
